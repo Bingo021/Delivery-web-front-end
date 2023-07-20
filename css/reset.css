@@ -1,0 +1,50 @@
+/***************** CSS重置 *******************/
+html,body,div,span,h1,h2,h3,h4,h5,h6,ul,ol,li,p{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: "微软雅黑";
+}
+ul,ol{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+.shop{
+	text-align: center;
+}
+.information{
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 3vw;
+	border-bottom: solid 1px #DDD;
+}
+.foot{
+	width:100%;
+	display: flex;
+	height: 14vw;
+	position:fixed;
+}
+.gouwuche{
+	width:60%;
+	background-color: aquamarine;
+}
+.b{
+	width: 40%;
+	justify-content: center;
+	display: flex;
+	background-color: bisque;
+	align-items: center;
+}
+.tp{
+	position: absolute;
+	height: 50px;
+	background-repeat: no-repeat;
+	border:1vw solid #333;
+	border-radius: 50%;
+}

@@ -1,0 +1,61 @@
+
+.one{
+	border: none;
+	font-size: 13px;
+	background-color:green;
+	color:white;
+	width: 330px;
+	height: 30px;
+	border-radius: 7px;
+}
+.two{
+		border: none;
+		font-size: 13px;
+		color:white;
+		width: 330px;
+		height: 30px;
+		border-radius: 7px;
+}
+.three{
+	border: none;
+	margin-left: 30px;
+}
+.four{
+	border: none;
+}
+.regForm div{
+				font-size: 16px;
+				height: 36px;
+				color: #333333;
+				margin-top: 10px;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				
+			}
+			.regForm label{
+				width: 90px;
+				display: flex;
+				justify-content:right;
+			}
+			.regForm input{
+				width: 200px;
+				display: flex;
+				border: none;
+			}
+			.regForm .submitBtn{
+				width: 300px;
+				background-color: #0097FF;
+				border: 0;
+				color: #FFF;
+				display: flex;
+				justify-content: center;
+			}
+			.regForm .submitBtn1{
+				width: 300px;
+				background-color:green;
+				border: 0;
+				color:white;
+				display: flex;
+				justify-content: center;
+			}

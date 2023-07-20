@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link href="css/reset.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<script src="js/index.js"></script>
+		<script src="js/jquery-1.12.4.js"></script>
+		<title>饿了么 首页</title>
+		<style type="text/css">
+			.loginForm div{
+				font-size: 16px;
+				height: 36px;
+				color: #333333;
+				margin-top: 10px;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+			}
+			.loginForm label{
+				width: 90px;
+				display: flex;
+				justify-content:right;
+			}
+			.loginForm input{
+				width: 200px;
+				display: flex;
+			}
+			.loginForm .submitBtn{
+				width: 300px;
+				background-color: #0097FF;
+				border: 0;
+				color: #FFF;
+				display: flex;
+				justify-content: center;
+				line-height: 36px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 总容器 -->
+		<div class="wrapper">
+			<!-- header部分 -->
+			<header>
+				<div class="icon-location-box">
+				    <div class="icon-location"></div>
+				</div>
+				<div class="head-text">用户登录</div>
+			</header>
+			<div class="loginForm">
+				<form action="">
+					
+					<div>
+						<label>用户名：</label>
+						<input type="text" placeholder="请输入用户名" class="username" />
+					</div>
+					<div>
+						<label>密码：</label>
+						<input type="password" placeholder="请输入密码" class="password"/>
+					</div>
+					
+					<div>
+						<a class="submitBtn" >登录</a>
+					</div>
+					
+					<div>
+						<a href="register.html">没有账号，前往注册</a>
+					</div>
+					
+				</form>
+				
+			</div>
+			
+			
+			<!-- 底部菜单部分 -->
+			<ul class="footer">
+				<li onclick="location.href='index.html'">
+					<i class="fa fa-home"></i>
+					<p>首页</p>
+				</li>
+				<li>
+					<i class="fa fa-compass"></i>
+					<p>发现</p>
+				</li>
+				<li onclick="location.href='orderList.html'">
+					<i class="fa fa-file-text-o"></i>
+					<p>订单</p>
+				</li>
+				<li>
+					<i class="fa fa-user-o"></i>
+					<p>我的</p>
+				</li>
+			</ul>
+		</div>
+		<script>
+			$(document).ready(function() {
+				var serverUrl = 'login.php';
+				
+				$('.submitBtn').click(function() {
+					uname = $.trim($('.username').val());
+					upassword = $.trim($('.password').val());
+					userData = {username: uname, password: upassword};
+					
+					$.post(serverUrl, userData, function(data, status, xhr) {
+						console.info('=========请求成功=========');
+						console.info('==返回值==',data);
+						console.info('==请求状态==',status);
+						if( data == 1){
+							$(window).attr('location','index.html');
+						} else {
+							alert('登录失败，请检查用户名或密码是否正确');
+						}
+					}).fail(function(xhr) {
+							alert('请求失败，错误信息：' + xhr.responseText);
+					});
+					
+				});
+			});
+		</script>
+	</body>
+</html>
